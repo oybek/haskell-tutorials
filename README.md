@@ -1,2 +1,4 @@
-# haskell-tutorials
+# Haskell Tutorials
+
 Learn Haskell
+
