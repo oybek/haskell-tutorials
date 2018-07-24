@@ -17,7 +17,7 @@ fib2 n
 fib3 :: (Integral a) => a -> a
 fib3 0 = 0
 fib3 1 = 1
-fib3 n = 
+fib3 n =
   let t1 = fib3 (n-1)
       t2 = fib3 (n-2)
   in t1 + t2
