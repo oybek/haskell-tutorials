@@ -16,6 +16,9 @@ fib n = first (pow (1, 1, 1, 0) (n-1))
 
 pow :: (Num m, Integral n) => (m, m, m, m) -> n -> (m, m, m, m)
 pow (x11, x12, x21, x22) 0 = (1, 0, 0, 1)
-pow (x11, x12, x21, x22) x =
-  mul (pow (x11, x12, x21, x22) (x-1)) (x11, x12, x21, x22)
+pow (x11, x12, x21, x22) x
+  | mod x 2 == 0 = mul t t
+  | otherwise = mul (pow (x11, x12, x21, x22) (x-1)) (x11, x12, x21, x22)
+  where
+  t = pow (x11, x12, x21, x22) (x `div` 2)
 
